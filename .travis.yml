@@ -39,6 +39,7 @@ before_install:
     - if [ "$BUILD_OS" = "WINDOWS" ]; then sudo apt-get update; fi
     - if [ "$BUILD_OS" = "WINDOWS" ]; then sudo apt-get install mxe-i686-w64-mingw32.static-qtbase mxe-i686-w64-mingw32.static-qtmultimedia; fi
 
+    - if [ "$BUILD_OS" = "MAC" ]; then brew update; fi
     - if [ "$BUILD_OS" = "MAC" ]; then HOMEBREW_FORCE_BREWED_CURL=1 brew install qt@5; fi
     - if [ "$BUILD_OS" = "MAC" ]; then brew link qt5 --force; fi
     
